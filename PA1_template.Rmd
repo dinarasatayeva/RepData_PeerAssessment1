@@ -5,6 +5,7 @@ title: "Reproducible Research: Week 2 Project"
 Load activity monitoring dataset and librarys necessary 
 ```{r echo = TRUE}
 activity = read.csv("activity.csv")
+
 library(ggplot2)
 ```
 
@@ -21,10 +22,10 @@ Calculate and report the mean and median of the total number of steps taken per 
 ```{r echo = TRUE}
 meanSteps<- mean(stepsPerDay)
 medianSteps<- median(stepsPerDay)
-
-cat("Mean of the total number of steps taken per day is: ", meanSteps)
-cat("Median of the total number of steps taken per day is: ", medianSteps)
 ```
+Mean of the total number of steps taken per day is: " `r meanSteps`
+Median of the total number of steps taken per day is: `r medianSteps`
+
 
 ## What is the average daily activity pattern?
 
@@ -49,8 +50,9 @@ stepsPerInterval[maxSteps, ]
 Calculate and report the total number of missing values in the dataset
 ```{r echo = TRUE}
 missingValues <- sum(is.na(activity))
-cat("Total number of missing values in activity monitoring data set is: ", missingValues)
 ```
+Total number of missing values in activity monitoring data set is:  `r missingValues`
+
 
 Devise a strategy for filling in all of the missing values in the dataset. Create a new dataset that is equal to the original dataset but with the missing data filled in.
 ```{r echo = TRUE}
@@ -75,10 +77,10 @@ Calculate and report the mean and median total number of steps taken per day.
 ```{r echo = TRUE}
 meanStepsImputed<- mean(stepsPerDayImputed)
 medianStepsImputed<- median(stepsPerDayImputed)
-
-cat("Mean of the total number of steps taken per day (with NAs substituted) is: ", meanSteps)
-cat("Median of the total number of steps taken per day (with NAs substituted) is: ", medianSteps)
 ```
+Mean of the total number of steps taken per day (with NAs substituted) is: ", `r meanSteps`
+"Median of the total number of steps taken per day (with NAs substituted) is: `r medianSteps`
+
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
